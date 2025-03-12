@@ -197,6 +197,9 @@
 })();
 const retryInterval = 5000; // 5 seconds
 
+// Backup retry mechanism for ensuring the main script continues running
+const retryInterval = 5000; // 5 seconds
+
 function startScript() {
     try {
         // Main script logic

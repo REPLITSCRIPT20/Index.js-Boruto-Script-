@@ -194,21 +194,18 @@
   } catch (error) {
     console.error("Error in script: ", error);
   }
-})();
-const retryInterval = 5000; // 5 seconds
-
-// Backup retry mechanism for ensuring the main script continues running
+})();// Final backup retry mechanism to ensure the script remains running in case of failure
 const retryInterval = 5000; // 5 seconds
 
 function startScript() {
     try {
-        // Main script logic
-        console.log("The script is running...");
-        // Simulate connection or other operations that depend on the internet
+        console.log("Initializing main script...");
+        _0x2cf4fd(); // Calls the main function for reconnection and execution
     } catch (error) {
-        console.error("Connection error. Retrying...");
+        console.error("Critical error encountered. Retrying in 5 seconds...");
         setTimeout(startScript, retryInterval); // Retry after 5 seconds
     }
 }
 
+// Initialize the main script
 startScript();
